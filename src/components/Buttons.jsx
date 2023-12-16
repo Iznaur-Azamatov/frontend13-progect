@@ -4,13 +4,20 @@ function Buttons({counter, setCounter}) {
 
 
     const plus = () => {
-        setCounter(counter + 1)
+        setCounter(counter + 3)
        }
        const reset = () => {
         setCounter(0)
        }
        const minus = () => {
-        setCounter(counter - 1)
+        if (counter > 0) {
+            if (counter === 1) {
+                setCounter(counter - 1)
+            }else{
+                setCounter(counter - 2)
+            }
+        }
+       
        }
     
     return(
