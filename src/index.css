@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(255, 255, 255, 0.878);
 }
 
 code {
@@ -13,120 +15,36 @@ code {
 }
 .container{
   padding: 24px 0px ;
-  width: 910px;
+  width: 1400px;
   margin: auto;
 }
-.logo {
+.Bloks{
+  width: 250px;
+  border: 1px solid rgb(128, 122, 122);
+  border-radius: 5px;
+  background-color: gray;
+  padding: 5px;
+}
+.Bloks img{
+  width: 250px;
+  border-radius:5px 5px 20px 20px;
+}
+.Bloks-item{
+display: flex;
+justify-content: space-between;
+}
+.title-block{
   display: flex;
-  align-items: center;
+  column-gap: 20px;
 }
-.logo img{
-  width: 154px;
-  height: auto;
+.Bloks p{
+color: #ffff;
 }
-.Header{
-  display: flex;
-  border-bottom: 1px solid #0000000D;
-  justify-content: space-between;
-}
-.Header ul{
-  list-style: none;
-  display: flex;
-  align-items: center;
-  width: 300px;
-  column-gap: 18px;
-}
-.Header a{
-  text-decoration: none;
-  color: #000;
-}
-.main{
-  margin-bottom: 262px;
-}
-.number{
-  color: #393939;
-  text-align: center;
-  font-size: 288px;
-  font-weight: 700;
-}
-.main-buttons{
-  display: flex;
-  justify-content: space-between;
-  width: 535px;
-  height: 58px;
-  align-items: center;
-  margin: 0 auto;
-}
-.btn__values-plus{
-  border-radius: 27px;
-  background: #0FC50B;
-  width: 56px;
-  height: 58px;
-  color: #FFF;
-  text-align: center;
-  font-size: 24px;
-  font-weight: 700;
+.btn{
+  width: 30px;
+  height: 35px;
+  border-radius: 5px;
   border: none;
-}
-.btn__values-minus{
-  width: 56px;
-  height: 58px;
-  border-radius: 27px;
-  background: #F64C4C;
-  color: #FFF;
-  text-align: center;
-  font-size: 24px;
-  font-weight: 700;
-  border: none;
-}
-.btn-refresh{
-  border-radius: 27px;
-  background: #E5E5E5;
-  width: 55px;
-  height: 58px;
-  border: none;
-}
-.btn-refresh img{
-  width: 29px;
-  height: 32px;
-}
-.btn__values-plus,.btn-refresh,.btn__values-minus:hover{
-  cursor: pointer;
-}
-.Footer{
-  display: flex;
-  margin: 0 auto;
-}
-.Footer-Logo img{
-width: 100px;
-height: 22px;
-margin-right: 25px;
-}
-.Massages{
-  margin-right: 125px;
-}
-.Massages ul{
-  display: flex;
-  list-style: none;
-column-gap: 18px;
-}
-.Massages li{
-  text-align: center;
-  font-size: 16px;
-  font-weight: 700;
-}
-.Massages a{
-  text-decoration: none;
-  color: #00000080;
-}
-
-.Copyright li{
-font-size: 16px;
-font-weight: 700;
-list-style: none;
-
-}
-.Copyright a{
-  text-decoration: none;
-  color: rgba(0, 0, 0, 0.50);
+  background-color: red;
+  color: white;
 }
