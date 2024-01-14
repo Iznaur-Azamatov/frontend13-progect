@@ -28,3 +28,6 @@ code {
   color: red;
   background-color: white;
 }
+.todos-input{
+  display: flex;
+}

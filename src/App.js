@@ -19,10 +19,10 @@ function deleteTodos(id) {
           todos.map((item,index) => {
             return(
               <div key={index} className="todos">
+                 <div className="todos-input">
                  <div>
                 <input type="checkbox" checked={item.done}/>
                 </div>
-                 <div>
                 {item.text}
                 </div>
                 <div>
