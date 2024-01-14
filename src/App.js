@@ -1,15 +1,37 @@
 import { useDispatch, useSelector } from "react-redux";
-import Text from "./components/Text";
 function App() {
 
-const person= {
-    name: 'Ali',
-    age:25
+  const todos = useSelector(state => state)
+
+  const dispatch = useDispatch()
+
+function deleteTodos(id) {
+  dispatch({
+    type:'DELETE',
+    payload:id
+  })
 }
+
 
   return (
     <div className='container'>
-      <Text person={person}/>
+        {
+          todos.map((item,index) => {
+            return(
+              <div key={index} className="todos">
+                 <div>
+                <input type="checkbox" checked={item.done}/>
+                </div>
+                 <div>
+                {item.text}
+                </div>
+                <div>
+                <button  className="btn-x" onClick={() => deleteTodos(index)}>X</button>
+                </div>
+              </div>
+            )
+          })
+        }
     </div>
     
   );  

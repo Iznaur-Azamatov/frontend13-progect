@@ -7,15 +7,36 @@ import { createStore } from 'redux'; // добавляем импорт функ
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
- 
-const reducer = (state , action) => { 
-    if (action.type === 'PLUS') {
-         return state + 1
+ const initialState = [
+    {
+        text:'react',
+        done:false
+    },
+    {
+        text:'html',
+        done:false
+    },
+    {
+        text:'css',
+        done:false
     }
-    if (action.type === 'MINUS') {
-        return state - 1
+ ]
+
+const reducer = (state = initialState, action) => { 
+   switch (action.type) {
+    case 'DELETE':
+        return state.filter((item,index) => {
+            if (action.payload !== index) return true
+        })
+
+
+
+
+
+
+    default:
+        return state
    }
-    return 0
 }
 
 const store = createStore(reducer); 
