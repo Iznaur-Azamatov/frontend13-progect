@@ -1,48 +1,30 @@
-import React, { useState } from 'react'; 
-import ReactDOM from 'react-dom/client'; 
-import './index.css'; 
-import App from './App'; 
-import { Provider } from 'react-redux'; 
-import { createStore } from 'redux'; // добавляем импорт функции createStore
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './components/App';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = document.getElementById('root');
 
- const initialState = [
-    {
-        text:'react',
-        done:false
-    },
-    {
-        text:'html',
-        done:false
-    },
-    {
-        text:'css',
-        done:false
+const reducer = (state, action) => {
+    if (action.type === 'PLUS') {
+        return state + 1;
     }
- ]
-
-const reducer = (state = initialState, action) => { 
-   switch (action.type) {
-    case 'DELETE':
-        return state.filter((item,index) => {
-            if (action.payload !== index) return true
-        })
-
-
-
-
-
-
-    default:
-        return state
-   }
+    if (action.type === 'MINUS') {
+        return state - 1;
+    }
+    if (action.type === 'RESET') {
+        return state = 0;
+    }
+    return 0;
 }
 
-const store = createStore(reducer); 
+const store = createStore(reducer);
 
-root.render( 
-    <Provider store={store}> 
-        <App /> 
-    </Provider> 
+ReactDOM.render(
+    <Provider store={store}>
+        <App/>
+    </Provider>,
+    root
 );
